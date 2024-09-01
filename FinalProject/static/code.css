@@ -1,0 +1,45 @@
+@media all and (orientation: portrait)
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+
+.main-editor {
+  display: flex;
+  width: 73%;
+  padding: 1rem;
+  position:fixed;
+  height:79vh;
+   justify-content: center;
+    align-items: center;
+}
+
+.first {
+  background-color: #ffffff;
+  width: 70%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  white-space: pre;
+  box-shadow: 0 1px 1px rgb(22, 22, 22);
+  outline: none;
+  padding: 0.4rem;
+  height: 60vh;
+  border: 15px solid #000000;
+}
+
+.second {
+  background-color: rgb(255, 255, 255);
+  width: 70%;
+  overflow-y: auto;
+  white-space: pre;
+  right: 0;
+  box-shadow: 0 1px 1px rgb(22, 22, 22);
+  padding: 0.4rem;
+  height: 60vh;
+  border: 15px solid #000000;
+}

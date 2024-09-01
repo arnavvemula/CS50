@@ -1,0 +1,21 @@
+
+{% extends "layout.html" %}
+
+{% block title %}
+    index
+{% endblock %}
+
+{% block main %}
+<h4>{{depend}}</h4>
+  <form action="/{{dencrypt}}" method="post"></p>
+      <p><label>What message would you like to {{dencrypt}}:</label></p>
+      <p><input type="text"  autocomplete="off" name="mess"></p>
+      <p><label>What {{dencrypt}} key: </label></p>
+      <p><input type="text"  autocomplete="off" name="key"><p>
+      <p><input class="btn btn-primary" type="submit" value="submit"></p>
+  </form>
+
+<div id='page' style='width: 900px'>
+  <h1><span style='border:5px black solid; font-size:3x;'>Your {{dencrypt}} is as follows: {{output}}</span></h1>
+</div>
+{% endblock %}

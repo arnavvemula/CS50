@@ -1,0 +1,64 @@
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Personal Info
+{% endblock %}
+
+{% block main %}
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="/static/p.css" rel="stylesheet">
+    <script>
+        function submitForm(){
+            var confirmed = confirm("Are you sure you want to delete?");
+            if(confirmed == true)
+            {
+                document.getElementById("myform").submit();
+            }
+        }
+    </script>
+    <div class="container">
+        <div class="section">
+
+            <h2 id="rocks">Add Info</h2>
+            <form action="/info" method="POST">
+                <input name="web" placeholder="Website name" type="text" autocomplete="off" autofocus>
+                <input name="username" placeholder="username" type="text" autocomplete="off" autofocus>
+                <input name="password" placeholder="password" type="text" autocomplete="off" autofocus>
+                <button class="btn btn-primary" type="submit">Add Info</button>
+            </form>
+        </div>
+
+        <div class="section">
+
+            <h2>INFO</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>website</th>
+                        <th>username</th>
+                        <th>Password</th>
+                        <th>Option</th>
+                    </tr>
+                </thead>
+                <tbody id="myTable">
+                    {% for info in Info %}
+                        {% set outer_loop = loop %}
+                        {% for decrypt in decryption%}
+                            {% if outer_loop.index0 == loop.index0 %}
+                                <tr>
+                                    <td>{{ info.website }}</td>
+                                    <td>{{ info.username}}</td>
+                                    <td>{{decrypt}}</td>
+                                    <td><form action="/delete/{{info.id}}" method='post' id="myform"><input  type="button" class="material-icons" value="delete" onclick="submitForm()"></form></td>
+                                </tr>
+                                {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

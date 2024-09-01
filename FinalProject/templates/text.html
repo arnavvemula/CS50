@@ -1,0 +1,15 @@
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Text Analyzer
+{% endblock %}
+
+{% block main %}
+<h2>Text Analyzer</h2>
+    <form name="text" action="/text" method="post"></p>
+        <p><label>What message would you like analyze:</label></p>
+        <p><input type="text" autocomplete="off" name="text"></p>
+        <button class="btn btn-primary" type="submit">Analyze</button>
+    </form>
+{% endblock %}

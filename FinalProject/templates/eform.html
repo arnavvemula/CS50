@@ -1,0 +1,21 @@
+
+{% extends "layout.html" %}
+
+{% block title %}
+    index
+{% endblock %}
+
+{% block main %}
+<link href="/static/write2.css" rel="stylesheet">
+<h2>EN€RYP₮!ON</h2>
+  <form action="/encrypt" method="post"></p>
+      <p><label>What message would you like to Encrypt:</label></p>
+      <p><input type="text" autocomplete="off" name="mess"></p>
+      <p><label>What is the Encryption key: </label></p>
+      <p><input type="text" autocomplete="off" min="1" name="key"><p>
+      <p><input class="btn btn-primary" type="submit" value="submit"></p>
+  </form>
+{% endblock %}
+
+
+

@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Text Analyzer
+{% endblock %}
+
+{% block main %}
+<h2>Text Analyzer</h2>
+    <form name="text" action="/text" method="post"></p>
+        <p><label>What message would you like analyze:</label></p>
+        <p><input type="text" autocomplete="off" value="{{ask}}" name="text"></p>
+        <button class="btn btn-primary" type="submit">Analyze</button>
+    </form>
+<div id='page' style='width: 850px'>
+  <h5><span style='font-size:2x;'>Total Text Size:{{size}}</span></h5>
+  <h5><span style='font-size:2x;'>Total Digits:{{digits}}</span></h5>
+  <h5><span style='font-size:2x;'>Special Characters:{{special}}</span></h5>
+  <h5><span style='font-size:2x;'>Total Letters:{{alphabets}}</span></h5>
+  <h5><span style='font-size:2x;'>Total Spaces:{{space}}</span></h5>
+</div>
+{% endblock %}

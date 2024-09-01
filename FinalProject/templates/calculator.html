@@ -1,0 +1,123 @@
+
+{% extends "layout.html" %}
+
+{% block title %}
+    calculator
+{% endblock %}
+
+{% block main %}
+<style>
+    #container{
+
+        text-align:center;
+        top:20%;
+    }
+
+</style>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<div id="container"class="w3-container">
+  <div class="w3-dropdown-hover">
+    <button class="w3-button w3-black" >Calculator types</button>
+    <div class="w3-dropdown-content w3-bar-block w3-border">
+      <a href="/scientific" class="w3-bar-item w3-button"> scientific calculator</a>
+      <a href="/basical" class="w3-bar-item w3-button" id="defaultOpen">basic calculator(default)</a>
+    </div>
+  </div>
+</div>
+
+
+
+{% block body %}
+<h2 >Calculator</h2>
+
+
+<script>
+   //function that display value
+   function dis(val)
+   {
+       document.getElementById("result").value+=val
+   }
+
+   //function that evaluates the digit and return result
+   function solve()
+   {
+       let x = document.getElementById("result").value
+       let y = eval(x)
+       document.getElementById("result").value = y
+   }
+
+   //function that clear the display
+   function clr()
+   {
+       document.getElementById("result").value = ""
+   }
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- for styling -->
+<style>
+   .title{
+   margin-bottom: 10px;
+   text-align:center;
+   width: 210px;
+   color:black;
+   border: solid black 2px;
+   }
+
+   input[type="button"]
+   {
+   background-color:black;
+   color: white;
+   border: solid black 2px;
+   width:100%
+   }
+
+   input[type="text"]
+   {
+   background-color:white;
+   border: solid black 2px;
+   width:100%
+   }
+</style>
+<!-- create table -->
+<div class ="title" >Basic Calculator</div>
+<table border="1">
+   <tr>
+      <td colspan="3"><input type="text" id="result"/></td>
+      <td><input type="button" value="c" onclick="clr()"/> </td>
+   </tr>
+   <tr>
+      <!-- create button and assign value to each button -->
+      <!-- each value will be added -->
+      <td><input type="button" value="1" onclick="dis('1')"/> </td>
+      <td><input type="button" value="2" onclick="dis('2')"/> </td>                    <!--Just so u know the re is each line -->
+      <td><input type="button" value="3" onclick="dis('3')"/> </td>
+      <td><input type="button" value="/" onclick="dis('/')"/> </td>
+   </tr>
+   <tr>
+      <td><input type="button" value="4" onclick="dis('4')"/> </td>
+      <td><input type="button" value="5" onclick="dis('5')"/> </td>
+      <td><input type="button" value="6" onclick="dis('6')"/> </td>
+      <td><input type="button" value="-" onclick="dis('-')"/> </td>
+   </tr>
+   <tr>
+      <td><input type="button" value="7" onclick="dis('7')"/> </td>
+      <td><input type="button" value="8" onclick="dis('8')"/> </td>
+      <td><input type="button" value="9" onclick="dis('9')"/> </td>
+      <td><input type="button" value="+" onclick="dis('+')"/> </td>
+   </tr>
+   <tr>
+      <td><input type="button" value="." onclick="dis('.')"/> </td>
+      <td><input type="button" value="0" onclick="dis('0')"/> </td>
+      <!-- This solve function can evaluate the valuies that was pressed by all the buttons above -->
+      <td><input type="button" value="=" onclick="solve()"/> </td>
+      <td><input type="button" value="*" onclick="dis('*')"/> </td>
+   </tr>
+</table>
+{% endblock %}
+{% endblock %}
+
+

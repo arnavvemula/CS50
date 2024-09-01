@@ -1,0 +1,18 @@
+
+{% extends "layout.html" %}
+
+{% block title %}
+    decrypt
+{% endblock %}
+
+{% block main %}
+<link href="/static/write2.css" rel="stylesheet">
+<h2>DE€RYP₮!ON</h2>
+    <form name="decrypt" action="/decrypt" method="post"></p>
+        <p><label>What message would you like to Decrypt:</label></p>
+        <p><input type="text" autocomplete="off" name="mess"></p>
+        <p><label>What is the Decryption key: </label></p>
+        <p><input type="text" autocomplete="off" min="1" name="key"><p>
+        <p><input class="btn btn-primary" type="submit" value="submit"></p>
+    </form>
+{% endblock %}
